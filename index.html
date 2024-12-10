@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Você caiu na armadilha da ADM!</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #FF69B4;
+            text-align: center;
+            color: #FFFFFF;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #FFFF00;
+            text-shadow: 2px 2px 5px #000000;
+        }
+
+        p {
+            font-size: 1.5em;
+            color: #FF6347;
+            margin-top: 20px;
+        }
+
+        img {
+            width: 70%;
+            margin-top: 20px;
+            border: 5px solid #000000;
+            border-radius: 10px;
+        }
+
+        .counter {
+            font-size: 1.2em;
+            margin-top: 20px;
+            color: #32CD32;
+        }
+
+        .button {
+            padding: 15px 30px;
+            font-size: 1.5em;
+            color: white;
+            background-color: #800080;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .button:hover {
+            background-color: #9932CC;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Achou mesmo que ia ter grupo? Achou errado!</h1>
+    <p>Você é o membro número <span id="member-number">0</span> que caiu no papo da Thailinha. Não faça comentários no post, para não estragar a brincadeira. Só agradeça e espere o próximo!</p>
+    
+    <img src="https://i.pinimg.com/736x/0b/3f/f1/0b3ff183b026106f19a95319d9f4b3b1.jpg" alt="Meme da trollagem">
+
+    <div class="counter">
+        <p>Você foi o primeiro a clicar!</p>
+    </div>
+
+    <button class="button" onclick="incrementCounter()">Clique aqui para saber mais!</button>
+
+    <script>
+        let counter = 0;
+        let clickCounter = document.getElementById("member-number");
+        let message = document.querySelector(".counter p");
+
+        function incrementCounter() {
+            counter++;
+            clickCounter.textContent = counter;
+
+            if (counter > 1) {
+                message.textContent = `Você foi o ${counter}º a clicar!`;
+            }
+        }
+    </script>
+
+</body>
+</html>
