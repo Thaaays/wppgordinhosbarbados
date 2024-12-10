@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trollagem da Thailinha</title>
+    <style>
+        body {
+            font-family: "Comic Sans MS", cursive, sans-serif;
+            text-align: center;
+            background-color: #ffccff;
+            color: #ff3366;
+        }
+        h1 {
+            color: #ff0066;
+            font-size: 3em;
+        }
+        p {
+            color: #6600cc;
+            font-size: 1.5em;
+        }
+        .message {
+            color: #33cc33;
+            font-size: 2em;
+            font-weight: bold;
+        }
+        img {
+            width: 80%;
+            max-width: 600px;
+            border: 5px solid #ff66cc;
+            margin-top: 20px;
+        }
+        .counter {
+            color: #00cc99;
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Achou mesmo que ia ter grupo?</h1>
+    <p class="message">Achou errado!</p>
+    <img src="https://i.pinimg.com/736x/5e/da/48/5eda4800e563530c6a738918e96d7023.jpg" alt="Meme de Trollagem">
+
+    <p class="counter">Você é o membro número <span id="clickCounter">0</span> que caiu no papo da Thailinha!</p>
+
+    <script>
+        // Contador de cliques
+        let clickCount = 0;
+        if (localStorage.getItem('clickCount')) {
+            clickCount = parseInt(localStorage.getItem('clickCount'));
+        }
+        
+        clickCount++;
+
+        // Armazenando o contador no localStorage para persistir entre atualizações
+        localStorage.setItem('clickCount', clickCount);
+
+        // Atualizando o contador na página
+        document.getElementById('clickCounter').textContent = clickCount;
+    </script>
+
+</body>
+</html>
