@@ -1,66 +1,80 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trollagem da Thailinha</title>
+    <title>Você Caiu Na Armadilha!</title>
     <style>
         body {
-            font-family: "Comic Sans MS", cursive, sans-serif;
+            background-color: #ff66b2; /* Cor de fundo bem vibrante */
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            color: white;
             text-align: center;
-            background-color: #ffccff;
-            color: #ff3366;
+            padding: 50px;
         }
+
         h1 {
-            color: #ff0066;
+            color: #ffff00; /* Amarelo bem forte */
             font-size: 3em;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
         }
-        p {
-            color: #6600cc;
-            font-size: 1.5em;
-        }
-        .message {
-            color: #33cc33;
+
+        h2 {
+            color: #00ff00; /* Verde neon */
             font-size: 2em;
+        }
+
+        p {
+            font-size: 1.5em;
+            color: #ff6600; /* Laranja brilhante */
             font-weight: bold;
         }
+
         img {
-            width: 80%;
+            width: 60%;
             max-width: 600px;
-            border: 5px solid #ff66cc;
             margin-top: 20px;
+            border-radius: 20px;
+            border: 5px solid #ff00ff; /* Borda fucsia */
         }
+
         .counter {
-            color: #00cc99;
             font-size: 1.8em;
+            color: #00ffff; /* Azul neon */
             font-weight: bold;
-            margin-top: 20px;
+        }
+
+        .message {
+            font-size: 1.3em;
+            color: #ffcc00; /* Amarelo forte */
+        }
+
+        .container {
+            background-color: #000000;
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 30px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
         }
     </style>
 </head>
 <body>
-
     <h1>Achou mesmo que ia ter grupo?</h1>
-    <p class="message">Achou errado!</p>
-    <img src="https://i.pinimg.com/736x/5e/da/48/5eda4800e563530c6a738918e96d7023.jpg" alt="Meme de Trollagem">
-
-    <p class="counter">Você é o membro número <span id="clickCounter">0</span> que caiu no papo da Thailinha!</p>
+    <h2>Achou errado!</h2>
+    <div class="container">
+        <p class="message">Você é o membro número <span class="counter" id="counter">0</span> que caiu no papo da Thailinha.</p>
+        <img src="https://i.pinimg.com/736x/5e/da/48/5eda4800e563530c6a738918e96d7023.jpg" alt="Meme do grupo">
+    </div>
 
     <script>
-        // Contador de cliques
-        let clickCount = 0;
-        if (localStorage.getItem('clickCount')) {
-            clickCount = parseInt(localStorage.getItem('clickCount'));
-        }
+        let count = 0;
+        const counterElement = document.getElementById('counter');
         
-        clickCount++;
-
-        // Armazenando o contador no localStorage para persistir entre atualizações
-        localStorage.setItem('clickCount', clickCount);
-
-        // Atualizando o contador na página
-        document.getElementById('clickCounter').textContent = clickCount;
+        // Função para incrementar o contador de pessoas que clicaram
+        setInterval(() => {
+            count++;
+            counterElement.textContent = count;
+        }, 1000); // Atualiza o contador a cada 1 segundo
     </script>
-
 </body>
 </html>
